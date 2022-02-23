@@ -21,6 +21,7 @@ public:
 
     list<Route> *getRouteList() { return &routeList; }
 
+	void processColinfo(list<Route> rList);
 private:
     MyData *appl;
     double **distance;

@@ -6,9 +6,9 @@ Label::Label() {
     int i;
     cost = 0.0;
     time = 0.0;
-    examined = 0;
-    attachedNode = 0;
-    unreachableNodes = 0;
+    examined = 0;		//is this label extended?
+    attachedNode = 0;	//last vertex of the partial path
+    unreachableNodes = 0;	//nodes which are not reachable
     succ = new short int[appl->getNbOfNodes()];
     for (i = 0; i < appl->getNbOfNodes(); i++)
         succ[i] = -1;
@@ -57,7 +57,8 @@ int Label::extend(int j) {
                     succ[i] = -2;
                     unreachableNodes = unreachableNodes + 1;
                 }
-    } else // extension to the depot
+    } 
+	else // extension to the depot
     {
         succ[i] = 0;
         time = time + appl->getServiceCost(i) + appl->getDistance(i, 0);

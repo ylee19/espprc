@@ -14,6 +14,7 @@ using namespace std;
 class MyData {
 public :
     MyData();
+	MyData(double **z_dual, double *y_dual, int **sc, int **st, int CAPA, int nbClients);
 
     MyData(string f, int nbClients);
 
