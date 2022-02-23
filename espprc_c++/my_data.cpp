@@ -56,12 +56,12 @@ MyData::MyData(double **z_dual, double *y_dual, int **sc, int **st, int CAPA, in
 				distance[i][j] = MyData::infinity;
 			}
 			else if (i == 0) { // z_0j
-				cost[i][j] = -z_dual[nbClients][j - 1] - y_dual[j - 1];
-				distance[i][j] = 0;
+				cost[0][j] = -z_dual[nbClients][j - 1] - y_dual[j - 1];
+				distance[0][j] = 0;
 			}
 			else if (j==0) { // z_i0
-				cost[i][j] = -z_dual[i-1][nbClients];
-				distance[i][j] = 0;
+				cost[i][0] = -z_dual[i-1][nbClients];
+				distance[i][0] = 0;
 			}
 			else {	// z_ij
 				cost[i][j] = sc[i - 1][j - 1] - z_dual[i - 1][j - 1] - y_dual[j - 1];

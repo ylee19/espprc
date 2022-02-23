@@ -70,13 +70,18 @@ private:
     int attachedNode;
     double cost;
     double time;
+
+
     // boolean value to indicate if the label has been extended or not
     int examined;
     static MyData *appl;
+
+
     // number of unreachable nodes
     int unreachableNodes;
-    // partial path and unreachable nodes; only managed when non elementary routes are not allowed
-    short int *succ;
+	// partial path and unreachable nodes; only managed when non elementary routes are not allowed
+    
+	short int *succ;
     // sequences of visited customers; only managed when non elementary routes are allowed
     // definition of succ[i]:
     // if i is in the path and not at the end: succ[i] is the successor node

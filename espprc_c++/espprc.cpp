@@ -147,9 +147,11 @@ int ESPPRC::solve() {
 
     for (iter = labelsNode[0].begin(); iter != labelsNode[0].end(); iter++)
         if (iter->getTime() != 0) //avoid the null label
-            if (iter->getCost() < -appl->getMyZero())
-                routeList.push_back((*iter).findRoute());
-
+			if (iter->getCost() < -appl->getMyZero()) {
+				cout << *iter<<endl;
+				routeList.push_back((*iter).findRoute());
+			
+			}
 
     delete[] pendingVertices;
     return 0;
