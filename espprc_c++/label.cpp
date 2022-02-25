@@ -125,8 +125,10 @@ int operator<(const Label &L1, const Label &L2) {
         if (L1.cost > L2.cost - Label::appl->getMyZero())
             return 0;
     }
-	// 여기부터는 L1의 시간이 더 작음. 즉 lexicographically better!
-    // Now check the dominance
+	// 여기부터는 L1의 시간이 더 작음. 즉 lexicographically better.
+    // 따라서 dominance check.
+
+	//Cost는 L1이 더 안좋을 경우, not dominate. return 1
     if (L1.cost > L2.cost + Label::appl->getMyZero()) return 1;
 
     // only when non elementary routes are not allowed
